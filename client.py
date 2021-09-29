@@ -1,6 +1,8 @@
 import connect4
 
-connect4 = connect4.Connect4Game(player1="ac")
+print("select name for the human player:")
+name = input()
+connect4 = connect4.Connect4Game(player1=name)
 connect4.start_game()
 print("game start")
 
@@ -19,3 +21,5 @@ while(not connect4.is_game_over()):
         for _ in ls:
             print(_)
         print("\n")
+winner = connect4.get_winner()
+print("winner is: ", winner)
