@@ -25,7 +25,6 @@ while (not isGameEnd):
         connect4.start_game()
         print("game start")
 
-        # todo invalid input
         while(not connect4.is_game_over()):
             if connect4.is_current_player_computer():
                 print("Computer places a checker")
@@ -35,7 +34,11 @@ while (not isGameEnd):
             else:
                 print(connect4.get_current_player(),
                       "please select a column to place checker:")
-                col = int(input())
+                s = input()
+                while not s.isnumeric() or int(s) < 0 or int(s) > 6:
+                    print("Please enter a valid number(0~6):")
+                    s = input()
+                col = int(s)
                 # check if the placement is valid then place the checker
                 if connect4.is_placement_valid(col):
                     # place a move
