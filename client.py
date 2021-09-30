@@ -50,7 +50,10 @@ while (not isGameEnd):
                     print("Invalid Column!!\n")
 
         winner = connect4.get_winner()
-        print("winner is: ", winner)
+        if winner is None:
+            print("This game is a tie.")
+        else:
+            print("winner is: ", winner)
         # exit the loop and end the game
         isGameEnd = True
     # handling value error exception
