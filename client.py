@@ -35,7 +35,7 @@ while (not isGameEnd):
                 print(connect4.get_current_player(),
                       "please select a column to place checker:")
                 s = input()
-                while not s.isnumeric() or int(s) < 0 or int(s) > 6:
+                while not s.isnumeric():
                     print("Please enter a valid number(0~6):")
                     s = input()
                 col = int(s)
